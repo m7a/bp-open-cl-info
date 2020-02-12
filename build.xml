@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project default="build">
+
+<!-- APPLICATION METADATA -->
+<property name="masysma.target"      value="ma_open_cl_info"/>
+<property name="masysma.c.compile.1" value="-fopenmp"/>
+<property name="masysma.c.link.1"    value="-fopenmp"/>
+<property name="masysma.c.link.2"    value="-lOpenCL"/>
+<property name="mdpc.name"           value="mdvl-open-cl-info"/>
+<property name="mdpc.section"        value="graphics"/>
+<property name="mdpc.arch"           value="any"/>
+<property name="mdpc.cpyear"         value="2016"/>
+<property name="mdpc.descrs" value="Displays OpenCL info and performs short tests"/>
+<property name="mdpc.bdep" value="debhelper (>= 8), opencl-headers, ocl-icd-libopencl1, ant, ocl-icd-opencl-dev | nvidia-opencl-dev | amd-opencl-dev"/>
+<property name="mdpc.descrl">
+ The ma_open_cl_info commandline utility detects all OpenCL devices in the
+ system and then attempts to run a simple matrix multiplication on all of them,
+ comparing results and times with a result obtained on the local CPU. This way,
+ one can identify potential speed improvements of using OpenCL as well as test
+ GPGPU with a simple program.
+</property>
+
+<property name="mdpc.file.install">
+ma_open_cl_info /usr/bin
+</property>
+
+<!-- CI INTEGRATION -->
+<target name="package_triggered" depends="package">
+	<property name="masysma.ci.trigger" value="newver"/>
+</target>
+<target name="package_triggered_i386" depends="package">
+	<property name="masysma.ci.trigger"     value="newver"/>
+	<property name="masysma.ci.runenv"      value="ssh"/>
+	<property name="masysma.ci.runenv.name" value="i386"/>
+</target>
+
+<!-- CONSTANT TPL IMPORT -->
+<property environment="env"/>
+<condition property="masysma.internal.includepath.rel" value="${env.MDVL_CI_PHOENIX_ROOT}" else=".."><isset property="env.MDVL_CI_PHOENIX_ROOT"/></condition>
+<property name="masysma.internal.includepath" location="${masysma.internal.includepath.rel}"/>
+<property name="masysma.internal.loadpath" value="${masysma.internal.includepath}/co-build/ant-build-template.xml"/>
+<condition property="masysma.internal.load" value="file://${masysma.internal.loadpath}" else="https://raw.githubusercontent.com/m7a/co-build/master/ant-build-template.xml"><resourceexists><file file="${masysma.internal.loadpath}"/></resourceexists></condition>
+<import><url url="${masysma.internal.load}"/></import>
+
+</project>

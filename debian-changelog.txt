@@ -1,0 +1,11 @@
+mdvl-open-cl-info (1.0.1) stable; urgency=medium
+
+  * Update to new version for new package (now with MDPC 2.0)
+
+ -- Linux-Fan, Ma_Sys.ma <Ma_Sys.ma@web.de>  Wed, 12 Feb 2020 23:27:49 +0100
+
+mdvl-open-cl-info (1.0.0) stable; urgency=medium
+
+  * mdvl-open-cl-info created
+
+ -- Linux-Fan <Ma_Sys.ma@web.de>  Sat, 19 Mar 2016 22:08:58 +0100
