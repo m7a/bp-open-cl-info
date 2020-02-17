@@ -108,3 +108,12 @@ Compile the tool with `ant` or build the package with `ant package`.
 Dependencies for building OpenCL applications are often hard to satisfy.
 Check `bdep` in `build.xml` for a list of Debian packages which seemed to be
 sufficient for compilation at the time of this writing.
+
+Bugs
+====
+
+ * May fail to compile if sizes of `float` are different than expected.
+   This problem is known to occur on Windows 8.1 and Windows 10.
+ * May fail to execute if the work size (`asz`) is greater than 100 MiB because
+   of timeouts. This is a limitation of the current software design (which does
+   not allow the computation on the GPU to be temporarily suspended).
