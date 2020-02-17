@@ -10,8 +10,8 @@
 <property name="mdpc.section"        value="graphics"/>
 <property name="mdpc.arch"           value="any"/>
 <property name="mdpc.cpyear"         value="2016"/>
-<property name="mdpc.descrs" value="Displays OpenCL info and performs short tests"/>
-<property name="mdpc.bdep" value="debhelper (>= 8), opencl-headers, ocl-icd-libopencl1, ant, ocl-icd-opencl-dev | nvidia-opencl-dev | amd-opencl-dev"/>
+<property name="mdpc.descrs"         value="Displays OpenCL info and performs short tests"/>
+<property name="mdpc.bdep"           value="debhelper (>= 8), opencl-headers, ocl-icd-libopencl1, ant, ocl-icd-opencl-dev | nvidia-opencl-dev | amd-opencl-dev"/>
 <property name="mdpc.descrl">
  The ma_open_cl_info commandline utility detects all OpenCL devices in the
  system and then attempts to run a simple matrix multiplication on all of them,
