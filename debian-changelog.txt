@@ -1,3 +1,9 @@
+mdvl-open-cl-info (1.0.2) stable; urgency=medium
+
+  * Add trigger for armhf build.
+
+ -- Linux-Fan, Ma_Sys.ma <Ma_Sys.ma@web.de>  Thu, 31 Dec 2020 00:37:39 +0100
+
 mdvl-open-cl-info (1.0.1) stable; urgency=medium
 
   * Update to new version for new package (now with MDPC 2.0)

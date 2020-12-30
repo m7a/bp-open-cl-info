@@ -33,6 +33,11 @@ ma_open_cl_info /usr/bin
 	<property name="masysma.ci.runenv"      value="ssh"/>
 	<property name="masysma.ci.runenv.name" value="i386"/>
 </target>
+<target name="package_triggered_armhf" depends="package">
+	<property name="masysma.ci.trigger"     value="newver"/>
+	<property name="masysma.ci.runenv"      value="ssh"/>
+	<property name="masysma.ci.runenv.name" value="armhf"/>
+</target>
 
 <!-- CONSTANT TPL IMPORT -->
 <property environment="env"/>
